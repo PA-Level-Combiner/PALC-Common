@@ -75,6 +75,8 @@
 
 
 	<Style Selector="Window">
+		<Setter Property="WindowStartupLocation"
+				Value="CenterScreen"/>
 		<Setter Property="Icon"
 				Value="/Assets/palc_icon.ico"/>
 		<Setter Property="Background"
