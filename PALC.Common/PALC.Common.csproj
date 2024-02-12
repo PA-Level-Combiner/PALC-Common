@@ -10,11 +10,24 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<AvaloniaResource Include="Views\Templates\**" />
 	</ItemGroup>
 
 
 	<ItemGroup>
-		<None Remove="Assets\palc_icon.ico" />
+	  <AvaloniaResource Remove="Views\Templates\Templates.axaml" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <AvaloniaResource Include="Views\Templates\Browse.axaml" />
+	  <AvaloniaResource Include="Views\Templates\Browse.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\CheckBoxSizeable.axaml" />
+	  <AvaloniaResource Include="Views\Templates\CheckBoxSizeable.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\IncludeOptions.axaml" />
+	  <AvaloniaResource Include="Views\Templates\IncludeOptions.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\LevelList.axaml" />
+	  <AvaloniaResource Include="Views\Templates\LevelList.axaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -28,6 +41,13 @@
 		<PackageReference Include="Avalonia.Diagnostics" Condition="'$(Configuration)'=='Reload Design'">
 		  <Version>11.0.5</Version>
 		</PackageReference>
+		<PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
 		<PackageReference Include="Semver" Version="2.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AvaloniaXaml Update="Views\Templates\Templates.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
 	</ItemGroup>
 </Project>
