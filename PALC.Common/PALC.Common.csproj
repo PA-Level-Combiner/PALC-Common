@@ -20,6 +20,7 @@
 
 
 	<ItemGroup>
+	  <AvaloniaResource Include="Views\MessageBox.cs" />
 	  <AvaloniaResource Include="Views\Templates\Browse.axaml" />
 	  <AvaloniaResource Include="Views\Templates\Browse.axaml.cs" />
 	  <AvaloniaResource Include="Views\Templates\CheckBoxSizeable.axaml" />

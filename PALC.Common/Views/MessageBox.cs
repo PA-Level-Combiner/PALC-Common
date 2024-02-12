@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Avalonia.Controls;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Base;
 using MsBox.Avalonia.Enums;
@@ -13,4 +13,7 @@ public static class MessageBoxTools
             "Error!",
             message + "\n\n" + (ex?.Message ?? string.Empty)
         );
+
+    public static ProgressModalDialog CreateProgressModalDialog(string content)
+        => new ProgressModalDialog(content);
 }
