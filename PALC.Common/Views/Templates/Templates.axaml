@@ -1,0 +1,9 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+	<StyleInclude Source="/Views/Templates/Browse.axaml" />
+	<StyleInclude Source="/Views/Templates/CheckBoxSizeable.axaml" />
+	<StyleInclude Source="/Views/Templates/IncludeOptions.axaml" />
+	<StyleInclude Source="/Views/Templates/LevelList.axaml" />
+
+</Styles>

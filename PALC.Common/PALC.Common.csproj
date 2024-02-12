@@ -10,24 +10,43 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<AvaloniaResource Include="Views\Templates\**" />
 	</ItemGroup>
 
 
 	<ItemGroup>
-		<None Remove="Assets\palc_icon.ico" />
+	  <AvaloniaResource Remove="Views\Templates\Templates.axaml" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <AvaloniaResource Include="Views\Templates\Browse.axaml" />
+	  <AvaloniaResource Include="Views\Templates\Browse.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\CheckBoxSizeable.axaml" />
+	  <AvaloniaResource Include="Views\Templates\CheckBoxSizeable.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\IncludeOptions.axaml" />
+	  <AvaloniaResource Include="Views\Templates\IncludeOptions.axaml.cs" />
+	  <AvaloniaResource Include="Views\Templates\LevelList.axaml" />
+	  <AvaloniaResource Include="Views\Templates\LevelList.axaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="11.0.9" />
-		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.9" />
-		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.9" />
+		<PackageReference Include="Avalonia" Version="11.0.5" />
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.5" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" allowedVersions="[8.0.0]" />
 		
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
 		<PackageReference Include="Avalonia.Diagnostics" Condition="'$(Configuration)'=='Reload Designer'">
 		  <Version>11.0.9</Version>
 		</PackageReference>
 		<PackageReference Include="Semver" Version="2.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AvaloniaXaml Update="Views\Templates\Templates.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaXaml>
 	</ItemGroup>
 </Project>
