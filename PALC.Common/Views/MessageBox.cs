@@ -14,6 +14,10 @@ public static class MessageBoxTools
             message + "\n\n" + (ex?.Message ?? string.Empty)
         );
 
+    public static IMsBox<ButtonResult> CreateErrorMsgBox<TException>(DisplayErrorArgs<TException> dispArgs) where TException : Exception?
+        => CreateErrorMsgBox(dispArgs.message, dispArgs.ex);
+
+
     public static ProgressModalDialog CreateProgressModalDialog(string content)
-        => new ProgressModalDialog(content);
+        => new(content);
 }

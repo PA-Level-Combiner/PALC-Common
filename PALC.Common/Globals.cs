@@ -20,6 +20,19 @@ public static class AEHHelper
     }
 }
 
+public class DisplayErrorArgs<TException>(string message, TException ex) where TException : Exception?
+{
+    public string message = message;
+    public TException ex = ex;
+}
+public class DisplayGeneralErrorArgs(string message, Exception? ex) : DisplayErrorArgs<Exception?>(message, ex) { }
+
+
+
+public static class AdditionalErrors
+{
+    public static readonly string noAccessHelp = $"Try running the program as admin or change your folder / file permissions.";
+}
 
 
 public static class GithubInfo
