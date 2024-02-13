@@ -8,6 +8,14 @@ namespace PALC;
 public delegate Task AsyncEventHandler(object? sender, EventArgs e);
 public delegate Task AsyncEventHandler<TEventArgs>(object? sender, TEventArgs e);
 
+public static class AEHHelper
+{
+    public static async Task RunAEH<TEventArgs>(AsyncEventHandler<TEventArgs>? aeh, object? sender, TEventArgs args)
+    {
+        if (aeh != null) await aeh(sender, args);
+    }
+}
+
 
 
 public static class GithubInfo
