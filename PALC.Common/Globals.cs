@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
 
@@ -42,4 +44,11 @@ public static class GithubInfo
     public static readonly string mainUrl = @"https://github.com/PA-Level-Combiner/PA-Level-Combiner-v3";
     public static readonly string mainIssues = Path.Combine(mainUrl, "issues/");
     public static readonly string mainReleases = Path.Combine(mainUrl, "releases/");
+}
+
+public static class ProgramInfo
+{
+    public static readonly string programVersion =
+        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion?.Split("+")[0]
+        ?? "Unknown version?? wtf";
 }
