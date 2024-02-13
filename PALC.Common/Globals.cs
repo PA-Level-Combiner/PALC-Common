@@ -14,6 +14,10 @@ public static class AEHHelper
     {
         if (aeh != null) await aeh(sender, args);
     }
+    public static async Task RunAEH(AsyncEventHandler? aeh, object? sender)
+    {
+        if (aeh != null) await aeh(sender, EventArgs.Empty);
+    }
 }
 
 
