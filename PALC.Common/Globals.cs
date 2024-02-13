@@ -32,9 +32,14 @@ public class DisplayGeneralErrorArgs(string message, Exception? ex) : DisplayErr
 
 
 
-public static class AdditionalErrors
+public static class ErrorHelper
 {
-    public static readonly string noAccessHelp = $"Try running the program as admin or change your folder / file permissions.";
+    public static bool IsFileException(Exception ex)
+        => ex is UnauthorizedAccessException ||
+        ex is PathTooLongException ||
+        ex is DirectoryNotFoundException ||
+        ex is FileNotFoundException;
+        
 }
 
 
