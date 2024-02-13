@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Semver;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -48,7 +49,21 @@ public static class GithubInfo
 
 public static class ProgramInfo
 {
-    public static readonly string programVersion =
-        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion?.Split("+")[0]
-        ?? "Unknown version?? wtf";
+    public static SemVersion? GetProgramVersion()
+    {
+        var ass = Assembly.GetEntryAssembly();
+        if (ass == null) return null;
+
+        string? version = FileVersionInfo.GetVersionInfo(ass.Location).ProductVersion?.Split("+")[0];
+        if (version == null) return null;
+
+        try
+        {
+            return SemVersion.Parse(version, SemVersionStyles.Any);
+        }
+        catch (FormatException)
+        {
+            return null;
+        }
+    }
 }
