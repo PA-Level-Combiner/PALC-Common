@@ -1,0 +1,128 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Grid Width="800" Height="300"
+				RowDefinitions="*, *, *, *, *"
+				ColumnDefinitions="*, *, *, *">
+			<Button Grid.Row="0" Grid.Column="0"
+					Content="Primary"
+					Foreground="{DynamicResource Color.Primary.FG}"
+					Background="{DynamicResource Color.Primary.BG}"/>
+			<Button Grid.Row="0" Grid.Column="1"
+					Content="Primary"
+					Foreground="{DynamicResource Color.Primary.Light.FG}"
+					Background="{DynamicResource Color.Primary.Light.BG}"/>
+			<Button Grid.Row="0" Grid.Column="2"
+					Content="Primary"
+					Foreground="{DynamicResource Color.Primary.Pressed.FG}"
+					Background="{DynamicResource Color.Primary.Pressed.BG}"/>
+			<Button Grid.Row="0" Grid.Column="3"
+					Content="Primary"
+					Foreground="{DynamicResource Color.Primary.Disabled.FG}"
+					Background="{DynamicResource Color.Primary.Disabled.BG}"/>
+			
+			
+			<Button Grid.Row="1" Grid.Column="0"
+					Content="Secondary"
+					Foreground="{DynamicResource Color.Secondary.FG}"
+					Background="{DynamicResource Color.Secondary.BG}"/>
+			<Button Grid.Row="1" Grid.Column="1"
+					Content="Secondary"
+					Foreground="{DynamicResource Color.Secondary.Light.FG}"
+					Background="{DynamicResource Color.Secondary.Light.BG}"/>
+			<Button Grid.Row="1" Grid.Column="2"
+					Content="Secondary"
+					Foreground="{DynamicResource Color.Secondary.Pressed.FG}"
+					Background="{DynamicResource Color.Secondary.Pressed.BG}"/>
+			<Button Grid.Row="1" Grid.Column="3"
+					Content="Secondary"
+					Foreground="{DynamicResource Color.Secondary.Disabled.FG}"
+					Background="{DynamicResource Color.Secondary.Disabled.BG}"/>
+
+
+			<Button Grid.Row="2" Grid.Column="0"
+					Content="Success"
+					Foreground="{DynamicResource Color.Success.FG}"
+					Background="{DynamicResource Color.Success.BG}"/>
+			<Button Grid.Row="2" Grid.Column="1"
+					Content="Success"
+					Foreground="{DynamicResource Color.Success.Light.FG}"
+					Background="{DynamicResource Color.Success.Light.BG}"/>
+			<Button Grid.Row="2" Grid.Column="2"
+					Content="Success"
+					Foreground="{DynamicResource Color.Success.Pressed.FG}"
+					Background="{DynamicResource Color.Success.Pressed.BG}"/>
+			<Button Grid.Row="2" Grid.Column="3"
+					Content="Success"
+					Foreground="{DynamicResource Color.Success.Disabled.FG}"
+					Background="{DynamicResource Color.Success.Disabled.BG}"/>
+			
+
+			<Button Grid.Row="3" Grid.Column="0"
+					Content="Danger"
+					Foreground="{DynamicResource Color.Danger.FG}"
+					Background="{DynamicResource Color.Danger.BG}"/>
+			<Button Grid.Row="3" Grid.Column="1"
+					Content="Danger"
+					Foreground="{DynamicResource Color.Danger.Light.FG}"
+					Background="{DynamicResource Color.Danger.Light.BG}"/>
+			<Button Grid.Row="3" Grid.Column="2"
+					Content="Danger"
+					Foreground="{DynamicResource Color.Danger.Pressed.FG}"
+					Background="{DynamicResource Color.Danger.Pressed.BG}"/>
+			<Button Grid.Row="3" Grid.Column="3"
+					Content="Danger"
+					Foreground="{DynamicResource Color.Danger.Disabled.FG}"
+					Background="{DynamicResource Color.Danger.Disabled.BG}"/>
+			
+			
+
+			<Button Grid.Row="4" Grid.Column="0"
+					Content="Base"
+					Foreground="{DynamicResource Color.Foreground}"
+					Background="{DynamicResource Color.Background}"/>
+		</Grid>
+	</Design.PreviewWith>
+	
+	
+	
+	<Color x:Key="Color.Foreground">White</Color>
+	<Color x:Key="Color.Background">#121113</Color>
+
+
+	<Color x:Key="Color.Primary.FG">Black</Color>
+	<Color x:Key="Color.Primary.BG">#E2E0E2</Color>
+	<Color x:Key="Color.Primary.Light.FG">Gray</Color>
+	<Color x:Key="Color.Primary.Light.BG">#FFFFFF</Color>
+	<Color x:Key="Color.Primary.Pressed.FG">Gray</Color>
+	<Color x:Key="Color.Primary.Pressed.BG">#E2E0E2</Color>
+	<Color x:Key="Color.Primary.Disabled.FG">Gray</Color>
+	<Color x:Key="Color.Primary.Disabled.BG">#AAA</Color>
+
+	<Color x:Key="Color.Secondary.FG">White</Color>
+	<Color x:Key="Color.Secondary.BG">#383638</Color>
+	<Color x:Key="Color.Secondary.Light.FG">White</Color>
+	<Color x:Key="Color.Secondary.Light.BG">#585658</Color>
+	<Color x:Key="Color.Secondary.Pressed.FG">Gray</Color>
+	<Color x:Key="Color.Secondary.Pressed.BG">#383638</Color>
+	<Color x:Key="Color.Secondary.Disabled.FG">Gray</Color>
+	<Color x:Key="Color.Secondary.Disabled.BG">#383638</Color>
+	
+	<Color x:Key="Color.Success.FG">White</Color>
+	<Color x:Key="Color.Success.BG">#05ADF0</Color>
+	<Color x:Key="Color.Success.Light.FG">White</Color>
+	<Color x:Key="Color.Success.Light.BG">#44E4FF</Color>
+	<Color x:Key="Color.Success.Pressed.FG">#8FFFF7</Color>
+	<Color x:Key="Color.Success.Pressed.BG">#05ADF0</Color>
+	<Color x:Key="Color.Success.Disabled.FG">#048CC2</Color>
+	<Color x:Key="Color.Success.Disabled.BG">#036187</Color>
+
+	<Color x:Key="Color.Danger.FG">White</Color>
+	<Color x:Key="Color.Danger.BG">#B74157</Color>
+	<Color x:Key="Color.Danger.Light.FG">White</Color>
+	<Color x:Key="Color.Danger.Light.BG">#FF5B79</Color>
+	<Color x:Key="Color.Danger.Pressed.FG">#FF5B79</Color>
+	<Color x:Key="Color.Danger.Pressed.BG">#B74157</Color>
+	<Color x:Key="Color.Danger.Disabled.FG">#E3516C</Color>
+	<Color x:Key="Color.Danger.Disabled.BG">#7A2B3A</Color>
+</ResourceDictionary>

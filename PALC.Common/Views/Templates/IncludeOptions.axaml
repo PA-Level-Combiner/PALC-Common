@@ -2,16 +2,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:PALC.Common.Views.Templates">
 	<Design.PreviewWith>
-		<DockPanel Width="600"
-				   Height="800">
-			<controls:IncludeOptions />
-		</DockPanel>
+		<controls:IncludeOptions Width="500" Height="400"/>
 	</Design.PreviewWith>
+	
+	<StyleInclude Source="/Views/Templates/CheckBoxSizeable.axaml" />
 
 	<Style Selector="controls|IncludeOptions">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type controls:IncludeOptions}">
-				<Grid RowDefinitions="*, 3*"
+				<Grid RowDefinitions="*, 6*"
 					  ColumnDefinitions="*">
 					<TextBlock Grid.Row="0"
 							   Classes="h2"

@@ -1,0 +1,187 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+		<Border Padding="20">
+			<Grid Width="400" Height="400"
+				  RowDefinitions="*, *, *, *"
+				  ColumnDefinitions="*, *">
+				<Button Grid.Row="0" Grid.Column="0"
+						Classes="primary"
+						Content="Button"/>
+				<Button Grid.Row="0" Grid.Column="1"
+						Classes="primary"
+						IsEnabled="False"
+						Content="Button"/>
+				
+				<Button Grid.Row="1" Grid.Column="0"
+						Classes="secondary"
+						Content="Button"/>
+				<Button Grid.Row="1" Grid.Column="1"
+						Classes="secondary"
+						IsEnabled="False"
+						Content="Button"/>
+				
+				<Button Grid.Row="2" Grid.Column="0"
+						Classes="success"
+						Content="Button"/>
+				<Button Grid.Row="2" Grid.Column="1"
+						Classes="success"
+						IsEnabled="False"
+						Content="Button"/>
+				
+				<Button Grid.Row="3" Grid.Column="0"
+						Classes="danger"
+						Content="Button"/>
+				<Button Grid.Row="3" Grid.Column="1"
+						Classes="danger"
+						IsEnabled="False"
+						Content="Button"/>
+				
+			</Grid>
+		</Border>
+    </Design.PreviewWith>
+
+	
+	
+	<Style Selector="Button">
+		<Setter Property="HorizontalContentAlignment"
+				Value="Center"/>
+		<Setter Property="VerticalContentAlignment"
+				Value="Center"/>
+		<Setter Property="Margin"
+				Value="4"/>
+
+		<Setter Property="FontFamily"
+				Value="{DynamicResource FontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{DynamicResource h2FontSize}"/>
+
+		<Setter Property="Foreground"
+					Value="{DynamicResource Color.Foreground}"/>
+		<Setter Property="FontWeight"
+				Value="Bold"/>
+
+
+
+		<Style Selector="^.primary">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.FG}"/>
+			<Setter Property="Background"
+					Value="{DynamicResource Color.Primary.BG}"/>
+
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Primary.Light.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Primary.Light.BG}"/>
+			</Style>
+
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Primary.Pressed.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Primary.Pressed.BG}"/>
+			</Style>
+			
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Primary.Disabled.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Primary.Disabled.BG}"/>
+			</Style>
+		</Style>
+
+		
+		
+		<Style Selector="^.secondary">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Secondary.FG}"/>
+			<Setter Property="Background"
+					Value="{DynamicResource Color.Secondary.BG}"/>
+
+			
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Secondary.Light.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Secondary.Light.BG}"/>
+			</Style>
+
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Secondary.Pressed.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Secondary.Pressed.BG}"/>
+			</Style>
+
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Secondary.Disabled.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Secondary.Disabled.BG}"/>
+			</Style>
+		</Style>
+
+		
+		
+		<Style Selector="^.success">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Success.FG}"/>
+			<Setter Property="Background"
+					Value="{DynamicResource Color.Success.BG}"/>
+
+			
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Success.Light.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Success.Light.BG}"/>
+			</Style>
+
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Success.Pressed.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Success.Pressed.BG}"/>
+			</Style>
+
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Success.Disabled.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Success.Disabled.BG}"/>
+			</Style>
+		</Style>
+
+		
+		
+		<Style Selector="^.danger">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Danger.FG}"/>
+			<Setter Property="Background"
+					Value="{DynamicResource Color.Danger.BG}"/>
+
+			
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Danger.Light.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Danger.Light.BG}"/>
+			</Style>
+
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Danger.Pressed.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Danger.Pressed.BG}"/>
+			</Style>
+
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Danger.Disabled.FG}"/>
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Danger.Disabled.BG}"/>
+			</Style>
+		</Style>
+	</Style>
+</Styles>

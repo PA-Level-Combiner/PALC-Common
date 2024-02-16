@@ -1,0 +1,28 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<TextBlock Classes="title"
+					   Text="Waaaa"/>
+		</Border>
+    </Design.PreviewWith>
+
+	
+	<Styles.Resources>
+		<Thickness x:Key="Margin">4</Thickness>
+	</Styles.Resources>
+
+	
+	<Style Selector=":is(Control)">
+		<Setter Property="HorizontalAlignment"
+				Value="Stretch"/>
+		<Setter Property="VerticalAlignment"
+				Value="Stretch"/>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl)">
+		<Setter Property="CornerRadius"
+				Value="10"/>
+	</Style>
+</Styles>

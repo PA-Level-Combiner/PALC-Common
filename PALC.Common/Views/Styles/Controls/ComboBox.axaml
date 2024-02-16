@@ -1,0 +1,109 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ava="using:System">
+    <Design.PreviewWith>
+		<Border Padding="20">
+			<Grid Width="200" Height="200"
+				  RowDefinitions="*, *">
+				<ComboBox DockPanel.Dock="Top"
+							  SelectedIndex="1">
+					<ComboBoxItem Content="wa"/>
+					<ComboBoxItem Content="wa2"/>
+
+				</ComboBox>
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
+
+
+	<Style Selector="ComboBoxItem">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Margin="5"
+					  ColumnDefinitions="Auto, *">
+					<Path Grid.Column="0"
+						  Data="M 67.7333 0 L 0 67.7333 L 67.7333 135.467 L 135.467 67.7333 Z"
+						  Fill="{DynamicResource Color.Primary.FG}"
+						  Stretch="Uniform"
+						  Height="{TemplateBinding FontSize}"
+						  IsVisible="{TemplateBinding IsSelected}" />
+					
+					<Rectangle Grid.Column="0"
+							   Fill="Transparent"
+							   Width="{TemplateBinding FontSize}" />
+
+					<ContentPresenter Grid.Column="1"
+									  Grid.ColumnSpan="2"
+									  HorizontalAlignment="Stretch"
+									  
+									  Foreground="{TemplateBinding Foreground}"
+									  Background="{TemplateBinding Background}"
+									  BorderBrush="{TemplateBinding BorderBrush}"
+									  BorderThickness="{TemplateBinding BorderThickness}"
+									  CornerRadius="{TemplateBinding CornerRadius}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Content="{TemplateBinding Content}"
+									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  Padding="{TemplateBinding Padding}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ ContentPresenter">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+		</Style>
+	</Style>
+
+
+	<Style Selector="ComboBox">
+		<Setter Property="Margin"
+				Value="4"/>
+
+		<Setter Property="FontFamily"
+				Value="{DynamicResource FontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{DynamicResource NormalFontSize}"/>
+
+		<Setter Property="Background"
+				Value="{DynamicResource Color.Primary.BG}" />
+		
+		
+		<Setter Property="VerticalAlignment"
+				Value="Center" />
+
+		<Style Selector="^ TextBlock">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.FG}" />
+		</Style>
+
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#Background">
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Primary.Light.BG}" />
+			</Style>
+
+			<Style Selector="^ TextBlock">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Primary.Light.FG}" />
+			</Style>
+		</Style>
+
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#Background">
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Primary.Pressed.BG}" />
+			</Style>
+
+			<Style Selector="^ TextBlock">
+				<Setter Property="Foreground"
+						Value="{DynamicResource Color.Primary.Pressed.FG}" />
+			</Style>
+		</Style>
+	</Style>
+</Styles>

@@ -1,0 +1,15 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+	<StyleInclude Source="/Views/Styles/Controls/Button.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/CheckBox.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/ComboBox.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/Control.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/Grid.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/Separator.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/TextBlock.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/TextBox.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/Window.axaml" />
+
+</Styles>

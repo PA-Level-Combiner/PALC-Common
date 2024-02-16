@@ -1,0 +1,155 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+			<Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+				<TextBlock Grid.Row="0"
+						   Text="normal"/>
+				
+				<TextBlock Grid.Row="1"
+						   Classes="caption"
+						   Text="caption"/>
+				
+				<TextBlock Grid.Row="2"
+						   Classes="h1"
+						   Text="h1 h1 h1 h1"/>
+				
+				<TextBlock Grid.Row="3"
+						   Classes="h2"
+						   Text="h2 h2 h2 h2"/>
+				
+				<TextBlock Grid.Row="4"
+						   Classes="h3"
+						   Text="h3 h3 h3 h3"/>
+				
+				<TextBlock Grid.Row="5"
+						   Grid.ColumnSpan="2"
+						   Classes="title success disabled"
+						   Text="title title title title"/>
+			</Grid>
+        </Border>
+    </Design.PreviewWith>
+	
+	
+
+	<Style Selector="TextBlock">
+		<Setter Property="FontFamily"
+				Value="{DynamicResource FontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{DynamicResource NormalFontSize}"/>
+
+		<Setter Property="Foreground"
+					Value="{DynamicResource Color.Foreground}"/>
+
+		<Setter Property="TextAlignment"
+				Value="Center"/>
+		<Setter Property="VerticalAlignment"
+				Value="Center"/>
+		<Setter Property="Margin"
+				Value="5"/>
+
+		<Setter Property="TextWrapping"
+				Value="WrapWithOverflow"/>
+
+
+
+		<Style Selector="^.h1">
+			<Setter Property="FontWeight"
+					Value="Bold"/>
+			<Setter Property="FontSize"
+				Value="{DynamicResource h1FontSize}"/>
+		</Style>
+
+		
+		<Style Selector="^.h2">
+			<Setter Property="FontWeight"
+					Value="Bold"/>
+			<Setter Property="FontSize"
+					Value="{DynamicResource h2FontSize}"/>
+		</Style>
+
+		
+		<Style Selector="^.title">
+			<Setter Property="Padding"
+					Value="10"/>
+			<Setter Property="FontWeight"
+					Value="Bold"/>
+			<Setter Property="FontSize"
+				Value="{DynamicResource TitleFontSize}"/>
+			<Setter Property="Background">
+				<SolidColorBrush Color="{DynamicResource Color.Foreground}"
+								 Opacity="0.25"/>
+			</Setter>
+		</Style>
+
+		
+		<Style Selector="^.caption">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Foreground}"/>
+			<Setter Property="FontSize"
+					Value="{DynamicResource captionFontSize}"/>
+		</Style>
+
+
+
+		<Style Selector="^.primary">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.FG}"/>
+
+			<Style Selector="^.light">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.Light.FG}"/>
+			</Style>
+
+			<Style Selector="^.disabled">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.Disabled.FG}"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^.secondary">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Secondary.FG}"/>
+
+			<Style Selector="^.light">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Secondary.Light.FG}"/>
+			</Style>
+
+			<Style Selector="^.disabled">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Secondary.Disabled.FG}"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^.success">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Success.FG}"/>
+
+			<Style Selector="^.light">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Success.Light.FG}"/>
+			</Style>
+
+			<Style Selector="^.disabled">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Success.Disabled.FG}"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^.danger">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Danger.FG}"/>
+
+			<Style Selector="^.light">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Danger.Light.FG}"/>
+			</Style>
+
+			<Style Selector="^.disabled">
+				<Setter Property="Foreground"
+					Value="{DynamicResource Color.Danger.Disabled.FG}"/>
+			</Style>
+		</Style>
+	</Style>
+</Styles>

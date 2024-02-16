@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace PALC.Common.Views.Templates;
 
-public class TextDisplayProperties<TOwner> : TemplatedControl where TOwner : TemplatedControl
-{
+
+public class Browse : TemplatedControl {
     public static readonly StyledProperty<string> WatermarkProperty =
-        AvaloniaProperty.Register<TOwner, string>(nameof(Watermark), "");
+            AvaloniaProperty.Register<Browse, string>(nameof(Watermark), "");
 
     public string Watermark
     {
@@ -22,7 +22,7 @@ public class TextDisplayProperties<TOwner> : TemplatedControl where TOwner : Tem
 
 
     public static readonly StyledProperty<string?> DisplayProperty =
-        AvaloniaProperty.Register<TOwner, string?>(nameof(Display), null);
+        AvaloniaProperty.Register<Browse, string?>(nameof(Display), null);
 
     public string? Display
     {
@@ -32,22 +32,17 @@ public class TextDisplayProperties<TOwner> : TemplatedControl where TOwner : Tem
 
 
     public static readonly StyledProperty<string> LabelTextProperty =
-        AvaloniaProperty.Register<TOwner, string>(nameof(LabelText));
+        AvaloniaProperty.Register<Browse, string>(nameof(LabelText));
 
     public string LabelText
     {
         get => GetValue(LabelTextProperty);
         set => SetValue(LabelTextProperty, value);
     }
-}
-
-public class TextDisplay : TextDisplayProperties<TextDisplay> { }
 
 
-public class BrowseProperties<TOwner> : TextDisplayProperties<TOwner> where TOwner : TemplatedControl
-{
     public static readonly StyledProperty<AsyncRelayCommand> ButtonClickProperty =
-        AvaloniaProperty.Register<TOwner, AsyncRelayCommand>(nameof(ButtonClick), new AsyncRelayCommand(async () => { await Task.FromResult(0); }));
+        AvaloniaProperty.Register<Browse, AsyncRelayCommand>(nameof(ButtonClick), new AsyncRelayCommand(async () => { await Task.FromResult(0); }));
 
     public AsyncRelayCommand ButtonClick
     {
@@ -55,9 +50,6 @@ public class BrowseProperties<TOwner> : TextDisplayProperties<TOwner> where TOwn
         set => SetValue(ButtonClickProperty, value);
     }
 }
-
-
-public class Browse : BrowseProperties<Browse> { }
 
 
 

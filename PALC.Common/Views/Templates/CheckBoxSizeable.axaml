@@ -2,26 +2,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:PALC.Common.Views.Templates">
 	<Design.PreviewWith>
-		<DockPanel Width="800"
-				   Height="400">
-			<controls:CheckBoxSizeable HorizontalAlignment="Center"
-									   CheckBoxSize="60"
-									   IsChecked="True"
-									   Text="Test Test"/>
-		</DockPanel>
+		<controls:CheckBoxSizeable Width="400" Height="200"
+								   HorizontalAlignment="Center"
+								   CheckBoxSize="60"
+								   IsChecked="True"
+								   Text="Test Test"/>
 	</Design.PreviewWith>
 
 	<Style Selector="controls|CheckBoxSizeable">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type controls:CheckBoxSizeable}">
 
-				<Grid RowDefinitions="*"
-					  ColumnDefinitions="*, 10*">
+				<Grid HorizontalAlignment="Center"
+					  RowDefinitions="*"
+					  ColumnDefinitions="Auto, Auto">
 
 					<Viewbox Grid.Column="0"
-							 Height="{TemplateBinding CheckBoxSize}"
-							 Width="{TemplateBinding CheckBoxSize}">
-						<CheckBox IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+							 MaxHeight="{TemplateBinding CheckBoxSize}"
+							 MaxWidth="{TemplateBinding CheckBoxSize}">
+						<CheckBox IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+								  CornerRadius="5"/>
 					</Viewbox>
 					
 					<TextBlock Grid.Column="1"

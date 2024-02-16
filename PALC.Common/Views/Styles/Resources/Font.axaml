@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="using:System">
+	
+	<FontFamily x:Key="FontFamily">Liberation Sans</FontFamily>
+	
+	<sys:Double x:Key="NormalFontSize">18</sys:Double>
+	<sys:Double x:Key="h1FontSize">30</sys:Double>
+	<sys:Double x:Key="h2FontSize">20</sys:Double>
+	<sys:Double x:Key="captionFontSize">14</sys:Double>
+	<sys:Double x:Key="TitleFontSize">40</sys:Double>
+	
+</ResourceDictionary>

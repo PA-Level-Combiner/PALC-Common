@@ -1,0 +1,13 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+		<Separator Width="100" />
+    </Design.PreviewWith>
+
+	
+	
+	<Style Selector="Separator">
+		<Setter Property="Background"
+				Value="{DynamicResource Color.Success.BG}" />
+	</Style>
+</Styles>

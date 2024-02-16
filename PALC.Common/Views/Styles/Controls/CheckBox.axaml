@@ -1,0 +1,43 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+		<Border Padding="20">
+			<CheckBox />
+		</Border>
+    </Design.PreviewWith>
+
+	<Style Selector="CheckBox">
+		<Setter Property="CornerRadius"
+				Value="5" />
+
+		<Setter Property="FontFamily"
+				Value="{DynamicResource FontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{DynamicResource NormalFontSize}"/>
+
+		<Setter Property="VerticalAlignment"
+				Value="Center"/>
+
+		
+		<Style Selector="^:checked /template/ Border#NormalRectangle">
+			<Setter Property="Background"
+					Value="{DynamicResource Color.Success.BG}"/>
+		</Style>
+
+		
+		<Style Selector="^:unchecked">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="Background"
+						Value="{DynamicResource Color.Danger.BG}"/>
+			</Style>
+
+			<Style Selector="^ /template/ Path#CheckGlyph">
+				<Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundChecked}" />
+				<Setter Property="Data"
+						Value="M 100.542 105.833 L 52.9167 58.2083 L 5.29166 105.833 L 3.29478e-06 100.542 L 47.625 52.9167 L 1.64739e-06 5.29166 L 5.29167 0 L 52.9167 47.625 L 100.542 -3.20903e-07 L 105.833 5.29167 L 58.2083 52.9167 L 105.833 100.542 Z" />
+				<Setter Property="Width" Value="9" />
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+		</Style>
+	</Style>
+</Styles>
