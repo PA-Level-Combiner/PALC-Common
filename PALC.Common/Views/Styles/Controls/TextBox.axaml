@@ -19,8 +19,14 @@
 				Value="{DynamicResource NormalFontSize}"/>
 
 		<Setter Property="Background"
-				Value="{DynamicResource Color.Foreground}" />
+				Value="{DynamicResource Color.Primary.BG}" />
 		<Setter Property="Foreground"
-				Value="{DynamicResource Color.Background}" />
+				Value="{DynamicResource Color.Primary.FG}" />
+
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background"
+				Value="{DynamicResource Color.Primary.Light.BG}" />
+		</Style>
 	</Style>
 </Styles>

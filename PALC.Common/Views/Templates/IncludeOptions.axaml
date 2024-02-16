@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:PALC.Common.Views.Templates">
 	<Design.PreviewWith>
-		<controls:IncludeOptions Width="500" Height="400"/>
+		<controls:IncludeOptions Width="500" Height="200"/>
 	</Design.PreviewWith>
 	
 	<StyleInclude Source="/Views/Templates/CheckBoxSizeable.axaml" />
@@ -18,26 +18,42 @@
 							   Text="Combine the following to the source level:"/>
 					<Grid Grid.Row="1"
 						  HorizontalAlignment="Center"
-						  RowDefinitions="*, *, *, *, *, *"
-						  ColumnDefinitions="*">
-						<controls:CheckBoxSizeable Grid.Row="0"
+						  ColumnDefinitions="*, *">
+						<Grid.Styles>
+							<Style Selector="controls|CheckBoxSizeable">
+								<Setter Property="HorizontalAlignment"
+										Value="Left" />
+							</Style>
+						</Grid.Styles>
+
+						<Grid Grid.Column="0"
+							  Margin="10"
+							  RowDefinitions="*, *, *">
+							<controls:CheckBoxSizeable Grid.Row="0"
 													IsChecked="{Binding BeatmapObjects, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
 													Text="Beatmap Objects"/>
-						<controls:CheckBoxSizeable Grid.Row="1"
-													IsChecked="{Binding Prefabs, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-													Text="Prefabs"/>
-						<controls:CheckBoxSizeable Grid.Row="2"
-													IsChecked="{Binding Markers, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-													Text="Markers"/>
-						<controls:CheckBoxSizeable Grid.Row="3"
+							<controls:CheckBoxSizeable Grid.Row="1"
+														IsChecked="{Binding Prefabs, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+														Text="Prefabs"/>
+							<controls:CheckBoxSizeable Grid.Row="2"
+														IsChecked="{Binding Markers, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+														Text="Markers"/>
+						</Grid>
+
+						<Grid Grid.Column="1"
+							  Margin="10"
+							  RowDefinitions="*, *, *">
+							<controls:CheckBoxSizeable Grid.Row="0"
 													IsChecked="{Binding Checkpoints, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
 													Text="Checkpoints"/>
-						<controls:CheckBoxSizeable Grid.Row="4"
-													IsChecked="{Binding EventKFs, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-													Text="Event Keyframes"/>
-						<controls:CheckBoxSizeable Grid.Row="5"
-													IsChecked="{Binding BGObjects, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-													Text="Background Objects"/>
+							<controls:CheckBoxSizeable Grid.Row="1"
+														IsChecked="{Binding EventKFs, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+														Text="Event Keyframes"/>
+							<controls:CheckBoxSizeable Grid.Row="2"
+														IsChecked="{Binding BGObjects, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+														Text="Background Objects"/>
+						</Grid>
+						
 					</Grid>
 				</Grid>
 			</ControlTemplate>

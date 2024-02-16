@@ -1,6 +1,8 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:PALC.Common.Views.Templates">
+        xmlns:i="https://github.com/projektanker/icons.avalonia"
+		xmlns:controls="using:PALC.Common.Views.Templates">
+
 	<Design.PreviewWith>
 		<controls:LevelList Height="300" Width="600" />
 	</Design.PreviewWith>
@@ -9,24 +11,31 @@
 	<Style Selector="controls|LevelList">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type controls:LevelList}">
-				<Grid RowDefinitions="*"
-					  ColumnDefinitions="3*, *">
-					
-					<ContentPresenter Content="{TemplateBinding ListBox}"/>
+				<Grid RowDefinitions="Auto, *">
+					<Grid Grid.Row="0"
+						  ColumnDefinitions="*, *">
+						<TextBlock Grid.Column="0"
+								   Classes="h2"
+								   TextAlignment="Left"
+								   Text="Level List" />
 
-					<Grid Grid.Column="1"
-						  RowDefinitions="*, *"
-						  ColumnDefinitions="*">
+						<Grid Grid.Column="1"
+							  HorizontalAlignment="Right"
+							  ColumnDefinitions="*, *">
+							<Button Grid.Column="0"
+									Classes="success"
+									i:Attached.Icon="mdi-plus"
+									Command="{TemplateBinding AddItemCommand}"/>
 
-						<Button Grid.Row="0"
-								Content="Add Level..."
-								Command="{TemplateBinding AddItemCommand}"/>
-
-						<Button Grid.Row="1"
-								Content="Delete Level"
-								Command="{Binding DeleteItemCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+							<Button Grid.Column="1"
+									Classes="danger"
+									i:Attached.Icon="mdi-delete"
+									Command="{Binding DeleteItemCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+						</Grid>
 					</Grid>
 
+					<ContentPresenter Grid.Row="1"
+									  Content="{TemplateBinding ListBox}"/>
 				</Grid>
 			</ControlTemplate>
 		</Setter>

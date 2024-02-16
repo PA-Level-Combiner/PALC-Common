@@ -1,0 +1,43 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="using:MsBox.Avalonia.Controls"
+		xmlns:common="using:PALC.Common.Views">
+
+	<Design.PreviewWith>
+		<ms:MsBoxStandardView />
+	</Design.PreviewWith>
+	
+	<Style Selector="ms|MsBoxStandardView">
+		<Style Selector="^ :is(TemplatedControl)">
+			<Setter	Property="Foreground"
+					Value="{DynamicResource Color.Foreground}" />
+		</Style>
+
+
+
+		<Style Selector="^ Button[Content=OK]">
+			<Setter Property="common:BindableClasses.Classes"
+					Value="primary" />
+		</Style>
+
+		<Style Selector="^ Button[Content=Yes]">
+			<Setter Property="common:BindableClasses.Classes"
+					Value="success" />
+		</Style>
+
+		<Style Selector="^ Button[Content=No]">
+			<Setter Property="common:BindableClasses.Classes"
+					Value="danger" />
+		</Style>
+
+		<Style Selector="^ Button[Content=Abort]">
+			<Setter Property="common:BindableClasses.Classes"
+					Value="danger" />
+		</Style>
+
+		<Style Selector="^ Button[Content=Cancel]">
+			<Setter Property="common:BindableClasses.Classes"
+					Value="danger" />
+		</Style>
+	</Style>
+</Styles>

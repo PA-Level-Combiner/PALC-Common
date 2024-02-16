@@ -1,5 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:i="https://github.com/projektanker/icons.avalonia"
 		xmlns:controls="using:PALC.Common.Views.Templates">
 
 	<Design.PreviewWith>
@@ -20,18 +21,22 @@
 	<Style Selector="controls|Browse">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type controls:Browse}">
-				<Grid RowDefinitions="Auto, *">
+				<Grid RowDefinitions="Auto, Auto">
 					<TextBlock Grid.Row="0"
-							   Margin="0 20 0 0"
+							   Classes="h2"
+							   TextAlignment="Left"
 							   Text="{TemplateBinding LabelText}"/>
 					
 					<Grid Grid.Row="1"
 						  ColumnDefinitions="*, Auto">
+
+		
 						<ScrollViewer Grid.Column="0">
-							<TextBox Margin="5"
+							<TextBox x:Name="textbox"
+									 Margin="5"
 									 VerticalAlignment="Stretch"
-								 
-									 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+									 
+									 ScrollViewer.HorizontalScrollBarVisibility="Visible"
 
 									 IsReadOnly="True"
 									 TextAlignment="Left"
@@ -41,11 +46,13 @@
 						</ScrollViewer>
 
 						<Button Grid.Column="1"
-								Classes="success"
+								Classes="secondary"
+								Padding="10"
 								Command="{Binding ButtonClick, RelativeSource={RelativeSource TemplatedParent}}">
-							<TextBlock FontFamily="CenturyGothic"
-									   Text="avalonia" />
+							<i:Icon Value="mdi-folder-open" Width="{Binding Height, RelativeSource={RelativeSource Self}}"
+									Height="30"/>
 						</Button>
+
 					</Grid>
 				</Grid>
 			</ControlTemplate>

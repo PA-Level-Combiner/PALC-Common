@@ -12,5 +12,8 @@
 				Value="/Assets/palc_icon.ico"/>
 		<Setter Property="Background"
 				Value="{DynamicResource Color.Background}"/>
+		
+		<Setter Property="Padding"
+				Value="20" />
 	</Style>
 </Styles>
