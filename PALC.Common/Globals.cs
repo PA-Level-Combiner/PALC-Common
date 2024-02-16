@@ -43,13 +43,18 @@ public static class ErrorHelper
 }
 
 
-public static class GithubInfo
+public class GithubInfo(string name)
 {
+    public readonly string name = name;
+    public readonly string url = $"https://github.com/{owner}/{name}";
+    public string Issues => Path.Combine(url, "issues/");
+    public string Releases => Path.Combine(url, "releases/");
+
+
     public static readonly string owner = "PA-Level-Combiner";
-    public static readonly string mainName = "PA-Level-Combiner-v3";
-    public static readonly string mainUrl = @"https://github.com/PA-Level-Combiner/PA-Level-Combiner-v3";
-    public static readonly string mainIssues = Path.Combine(mainUrl, "issues/");
-    public static readonly string mainReleases = Path.Combine(mainUrl, "releases/");
+
+    public static readonly GithubInfo main = new("PA-Level-Combiner-v3");
+    public static readonly GithubInfo updater = new("PALC.Updater");
 }
 
 public static class ProgramInfo

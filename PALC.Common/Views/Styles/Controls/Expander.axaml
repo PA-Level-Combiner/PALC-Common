@@ -1,0 +1,25 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+		<Border Width="400" Height="200"
+				Padding="20">
+			<Expander Header="Header"
+					  Content="contentus" />
+		</Border>
+    </Design.PreviewWith>
+	
+	
+	<Style Selector="Expander">
+		<Style Selector="^ TextBlock">
+			<Setter Property="Foreground"
+					Value="{DynamicResource Color.Primary.FG}" />
+		</Style>
+
+
+		<Style Selector="^ ToggleButton">
+			<Setter Property="Background"
+				Value="{DynamicResource Color.Primary.BG}"/>
+		</Style>
+		
+	</Style>
+</Styles>

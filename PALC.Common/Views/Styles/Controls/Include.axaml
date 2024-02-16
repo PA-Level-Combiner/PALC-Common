@@ -6,6 +6,7 @@
 	<StyleInclude Source="/Views/Styles/Controls/CheckBox.axaml" />
 	<StyleInclude Source="/Views/Styles/Controls/ComboBox.axaml" />
 	<StyleInclude Source="/Views/Styles/Controls/Control.axaml" />
+	<StyleInclude Source="/Views/Styles/Controls/Expander.axaml" />
 	<StyleInclude Source="/Views/Styles/Controls/Grid.axaml" />
 	<StyleInclude Source="/Views/Styles/Controls/ListBox.axaml" />
 	<StyleInclude Source="/Views/Styles/Controls/MessageBox.axaml" />
