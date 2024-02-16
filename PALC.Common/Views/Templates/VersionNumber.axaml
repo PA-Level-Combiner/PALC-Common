@@ -1,0 +1,75 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:PALC.Common.Views.Templates">
+	<Design.PreviewWith>
+		<Grid Width="300" Height="100"
+			  RowDefinitions="*, *">
+			<controls:VersionNumber Grid.Row="0"
+									Ver="{Binding DesignRel, RelativeSource={RelativeSource Self}}"/>
+
+			<controls:VersionNumber Grid.Row="1"
+									Ver="{Binding DesignPre, RelativeSource={RelativeSource Self}}"/>
+		</Grid>
+		
+	</Design.PreviewWith>
+
+
+	<Styles.Resources>
+		<controls:VerMainConverter x:Key="main" />
+		<controls:VerPrereleaseConverter x:Key="pre" />
+	</Styles.Resources>
+
+
+	<Style Selector="controls|VersionNumber">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type controls:VersionNumber}">
+				
+				<Grid HorizontalAlignment="Center"
+					  VerticalAlignment="Center"
+					  ColumnDefinitions="Auto, Auto, Auto"
+					  RowDefinitions="Auto">
+					<StackPanel Grid.Column="0">
+						<Border Background="{DynamicResource Color.Primary.BG}"
+								IsVisible="{Binding Ver.IsPrerelease, RelativeSource={RelativeSource TemplatedParent}}">
+							<TextBlock Classes="primary"
+									   FontWeight="Bold"
+									   Text="PRERELEASE"/>
+						</Border>
+
+						<Border Background="{DynamicResource Color.Secondary.BG}"
+								IsVisible="{Binding !Ver.IsPrerelease, RelativeSource={RelativeSource TemplatedParent}}">
+							<TextBlock Classes="secondary"
+									   FontWeight="Bold"
+									   Text="RELEASE"/>
+						</Border>
+					</StackPanel>
+					
+	
+					
+					<TextBlock Grid.Column="1"
+							   Text="{
+							   Binding Ver,
+							   RelativeSource={RelativeSource TemplatedParent},
+							   Converter={StaticResource main},
+							   Mode=OneWay
+							   }"/>
+
+					<Border Grid.Column="2"
+							IsVisible="{Binding Ver.IsPrerelease, RelativeSource={RelativeSource TemplatedParent}}"
+							CornerRadius="10"
+							Background="{DynamicResource Color.Danger.BG}">
+						<TextBlock Text="{
+								   Binding Ver,
+								   RelativeSource={RelativeSource TemplatedParent},
+								   Converter={StaticResource pre},
+								   Mode=OneWay
+								   }"/>
+					</Border>
+
+				</Grid>
+				
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+</Styles>
