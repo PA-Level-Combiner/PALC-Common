@@ -29,6 +29,7 @@
 
 				<Grid RowDefinitions="Auto, Auto">
 					<TextBlock Margin="0"
+							   Padding="0"
 							   Classes="title"
 							   Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}"/>
 

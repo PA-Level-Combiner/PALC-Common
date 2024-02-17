@@ -70,8 +70,6 @@
 
 		
 		<Style Selector="^.title">
-			<Setter Property="Padding"
-					Value="10"/>
 			<Setter Property="FontWeight"
 					Value="Bold"/>
 			<Setter Property="FontSize"
