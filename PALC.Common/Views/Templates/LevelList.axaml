@@ -25,11 +25,13 @@
 							<Button Grid.Column="0"
 									Classes="success"
 									i:Attached.Icon="mdi-plus"
-									Command="{TemplateBinding AddItemCommand}"/>
+									IsEnabled="{Binding AddItemEnabled, RelativeSource={RelativeSource TemplatedParent}}"
+									Command="{Binding AddItemCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
 
 							<Button Grid.Column="1"
 									Classes="danger"
 									i:Attached.Icon="mdi-delete"
+									IsEnabled="{Binding DeleteItemEnabled, RelativeSource={RelativeSource TemplatedParent}}"
 									Command="{Binding DeleteItemCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
 						</Grid>
 					</Grid>
