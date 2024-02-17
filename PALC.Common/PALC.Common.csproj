@@ -20,7 +20,13 @@
 
 
 	<ItemGroup>
+	  <AvaloniaXaml Remove="Views\Templates\TitleText.axaml" />
+	</ItemGroup>
+
+
+	<ItemGroup>
 	  <Compile Remove="Views\Templates\IncludeOptions - Copy.axaml.cs" />
+	  <Compile Remove="Views\Templates\VersionNumber - Copy.axaml.cs" />
 	</ItemGroup>
 
 

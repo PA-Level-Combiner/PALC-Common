@@ -5,5 +5,7 @@
 	<StyleInclude Source="/Views/Templates/CheckBoxSizeable.axaml" />
 	<StyleInclude Source="/Views/Templates/IncludeOptions.axaml" />
 	<StyleInclude Source="/Views/Templates/LevelList.axaml" />
+	<StyleInclude Source="/Views/Templates/TitleText.axaml" />
+	<StyleInclude Source="/Views/Templates/VersionNumber.axaml" />
 
 </Styles>

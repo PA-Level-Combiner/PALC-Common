@@ -1,4 +1,5 @@
-﻿using Semver;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Semver;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -57,23 +58,19 @@ public class GithubInfo(string name)
     public static readonly GithubInfo updater = new("PALC.Updater");
 }
 
-public static class ProgramInfo
+public partial class ProgramInfo : ObservableObject
 {
-    public static SemVersion? GetProgramVersion()
+    public static SemVersion GetProgramVersion()
     {
-        var ass = Assembly.GetEntryAssembly();
-        if (ass == null) return null;
+        var ass = Assembly.GetEntryAssembly() ?? throw new NullReferenceException("No entry assembly found.");
+        string version = (FileVersionInfo.GetVersionInfo(ass.Location).ProductVersion?.Split("+")[0])
+            ?? throw new NullReferenceException("Product version is missing.");
 
-        string? version = FileVersionInfo.GetVersionInfo(ass.Location).ProductVersion?.Split("+")[0];
-        if (version == null) return null;
-
-        try
-        {
-            return SemVersion.Parse(version, SemVersionStyles.Any);
-        }
-        catch (FormatException)
-        {
-            return null;
-        }
+        return SemVersion.Parse(version, SemVersionStyles.Any);
     }
+
+    public ProgramInfo() { }
+
+    [ObservableProperty]
+    public SemVersion programVersion = GetProgramVersion();
 }

@@ -1,0 +1,44 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:PALC.Common.Views.Templates">
+	<Design.PreviewWith>
+		<Grid Width="500" Height="300"
+			  RowDefinitions="*, *">
+			<Border BorderBrush="White"
+					VerticalAlignment="Center"
+					BorderThickness="10">
+				<controls:TitleText Grid.Row="0"
+								Title="PA LEVEL COMBINER"
+								Ver="{Binding DesignRel, RelativeSource={RelativeSource Self}}" />
+			</Border>
+
+
+			<controls:TitleText Grid.Row="1"
+								Title="PALC UPDATER"
+								Ver="{Binding DesignPre, RelativeSource={RelativeSource Self}}" />
+		</Grid>
+	</Design.PreviewWith>
+
+
+	<StyleInclude Source="/Views/Templates/VersionNumber.axaml" />
+
+
+	<Style Selector="controls|TitleText">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type controls:TitleText}">
+
+				<Grid RowDefinitions="Auto, Auto">
+					<TextBlock Margin="0"
+							   Classes="title"
+							   Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+					<controls:VersionNumber Grid.Row="1"
+											Ver="{Binding Ver, RelativeSource={RelativeSource TemplatedParent}}" />
+				</Grid>
+
+
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+</Styles>
